@@ -1,4 +1,4 @@
-# Simple Apollo Server + TS + Postgresql + Docker
+# Simple Apollo Server + TS + Postgresql + Docker + Prisma
 The overall goal of this project is to allow a user to pull this with only docker on their machine and get up and running with development.
 
 If you are able to run `docker run hello-world` you are all set
