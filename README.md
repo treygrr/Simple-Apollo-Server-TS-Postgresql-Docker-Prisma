@@ -26,6 +26,9 @@ Install from your favorite flavor package manager
 
 # Running the Project
 1. Copy .env.example to .env
+   1. If you plan on using the containers to run the project use ```DATABASE_URL="postgresql://admin:passwordHere@postgres:5432/retaildb?schema=public"``` note: that @postgres is the domain within the container service that the node container will use to connect to the db from the node container.
+   1. If you plan on using tools running on your system for node use ```DATABASE_URL="postgresql://admin:passwordHere@0.0.0.0:5432/retaildb?schema=public"``` note: that @0.0.0.0:5432 is the domain that the database container is available on your host/local machine. You can set this up with /etc/hosts modifications and point ```0.0.0.0 postgres``` if you want. For sanity and covering bases please configure as needed.
+
 1. Configure .env environment variables as needed
 1. To start the project in docker
    -  ```docker compose up -d```
@@ -36,6 +39,7 @@ Install from your favorite flavor package manager
    - ```docker attach node```
    - ```docker attach postgres```
 
+# If you don't have [NVM](https://github.com/nvm-sh/nvm)
 ## Use full commands in Node Container
 1. ```yarn prisma migrate dev```
    - This will create a migration for changes that have occurred within prisma/schema.prisma
@@ -46,10 +50,21 @@ Install from your favorite flavor package manager
 1. ```yarn compile```
    - Build the project and outputs contents to /dist folder
 
+# If you have NVM
+1. Run ```nvm use``` in the base directory. This will install and switch to the version of node configured for this project.
+## Use full commands for node project
+1. ```yarn prisma migrate dev```
+   - This will create a migration for changes that have occurred within prisma/schema.prisma
+1. ```yarn```
+   - Installs node dependencies for the project
+1. ```yarn dev```
+   - Starts the development server and runs it on your configured port
+1. ```yarn compile```
+   - Build the project and outputs contents to /dist folder
 # Docker
 The docker file called docker-compose.yml is the configuration and orchestration software for this repository. 
 
-This starts a container named "node" that has Node Version 18 installed. The working director for the container is /usr/app. Running the above script to SSH into the container should drop you into this directory as the working directory is configure to /usr/app as well. 
+This starts a container named "node" that has Node Version 18 installed. The working director for the container is ```/usr/app```. Running the above script to SSH into the container should drop you into the aforementioned directory. Since the "working directory" is configured to ```/usr/app```.
 
 Any files that change on your local system as you work will be symlinked into the Node container and should trigger a reload of the dev environment for maximum testing and iteration speed.
 
