@@ -88,3 +88,8 @@ Postgres data will get mounted the the volume called postgres-data on your host 
    1. My favorite database - is a powerful, open source object-relational database system with over 35 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.
 1. [Typescript](https://www.typescriptlang.org/)
    1. Because you value your teams sanity - TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
+
+# TODO
+1. Add [Rome](https://rome.tools/)
+1. Add some type of project structuring
+1. Add generic login system for JWTs?
