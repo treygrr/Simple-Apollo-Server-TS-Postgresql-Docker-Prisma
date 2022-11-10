@@ -73,3 +73,18 @@ Everything in this directory is mounted into /usr/app
 Node will not start if postgres container is not running.
 
 Postgres data will get mounted the the volume called postgres-data on your host system.
+
+# Technology used in this project.
+## Documentation:
+1. [Docker Compose](https://docs.docker.com/compose/)
+   1. Container orchestration for dev, allowing you to get new machines up and running quickly.
+1. [Node](https://nodejs.org/en/docs/)
+   1. Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+1. [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
+   1. Apollo Server is an open-source, spec-compliant GraphQL server that's compatible with any GraphQL client
+1. [Prisma](https://www.prisma.io/docs/reference)
+   1. Prisma is a next-generation Node.js and TypeScript ORM for PostgreSQL, MySQL, SQL Server, SQLite, MongoDB, and CockroachDB.
+1. [Postgres](https://hub.docker.com/_/postgres)
+   1. My favorite database - is a powerful, open source object-relational database system with over 35 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.
+1. [Typescript](https://www.typescriptlang.org/)
+   1. Because you value your teams sanity - TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
